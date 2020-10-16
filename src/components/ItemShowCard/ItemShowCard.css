@@ -1,0 +1,14 @@
+.item-show-card-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  overflow: hidden;
+  background-color: aqua;
+  transition: all 1s ease-in-out;
+}
+
+.item-show-card-container.hide {
+  top: 100%;
+  height: 0;
+}
