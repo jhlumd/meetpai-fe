@@ -1,0 +1,16 @@
+.search-page-container {
+  border: 1px solid red;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.search-input-container {
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-page-container .results-index {
+  border: 1px solid blue;
+}
