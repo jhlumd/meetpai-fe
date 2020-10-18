@@ -18,7 +18,7 @@ export default function SearchPage(props) {
       : demoData.filter(
           (item) =>
             item.name.toLowerCase().includes(searchInputWord.toLowerCase()) ||
-            item.type.includes(searchInputWord.toLowerCase())
+            item.domain.includes(searchInputWord.toLowerCase())
         );
 
   return (

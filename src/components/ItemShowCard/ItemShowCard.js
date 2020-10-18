@@ -13,7 +13,7 @@ export default function ItemShowCard(props) {
   };
 
   let showCardComponent;
-  switch (itemForShowCard.type) {
+  switch (itemForShowCard.domain) {
     case "restaurant":
       showCardComponent = <RestaurantItem itemForShowCard={itemForShowCard} />;
       break;

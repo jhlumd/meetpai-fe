@@ -26,6 +26,7 @@ export default function SearchInput(props) {
   const handleKeyPress = (e) => {
     if (e.keyCode === 13) {
       console.log("Enter key was pressed with value:", e.target.value);
+      handleCloseShowCard();
     }
   };
 

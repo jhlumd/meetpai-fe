@@ -2,8 +2,8 @@
   background-color: #151515;
   color: white;
 
-  /* fixme relative font-size */
-  font-size: calc(10px + 2vmin); 
+  /* fixme: relative font-size */
+  /* font-size: calc(10px + 2vmin);  */
 
   min-height: 100vh;
   display: flex;
