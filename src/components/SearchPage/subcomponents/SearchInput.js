@@ -8,10 +8,9 @@ import { Mic, Search } from "@material-ui/icons";
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
-recognition.continous = true;
+recognition.continuous = true;
 recognition.interimResults = true;
 recognition.lang = "en-US";
-console.log("SpeechRec setup completed", SpeechRecognition);
 
 export default function SearchInput(props) {
   const { searchInputWord, setSearchInputWord, handleCloseShowCard } = props;
@@ -72,7 +71,9 @@ export default function SearchInput(props) {
     */
     //  fixme: onresult not firing...
     let finalTranscript = "";
+    console.log("recognition obj:", recognition);
     recognition.onresult = (e) => {
+      console.log("RESULT EVENT FIRED!!!");
       let interimTranscript = "";
 
       for (let i = e.resultIndex; i < e.results.length; i++) {

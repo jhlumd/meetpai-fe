@@ -11,6 +11,7 @@ export default function SearchPage(props) {
   */
   const [searchInputWord, setSearchInputWord] = useState("");
 
+  // fixme: search more props
   const filteredResults =
     searchInputWord === ""
       ? []
