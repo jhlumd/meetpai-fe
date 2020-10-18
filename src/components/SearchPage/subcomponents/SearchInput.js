@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, TextField } from "@material-ui/core";
+import { IconButton, TextField } from "@material-ui/core";
 import { Mic, Search } from "@material-ui/icons";
 
 export default function SearchInput(props) {
@@ -13,30 +13,48 @@ export default function SearchInput(props) {
     console.log("Submit search!!");
   };
 
+  const handleKeyPress = (e) => {
+    if (e.keyCode === 13) {
+      console.log("Entered value:", e.target.value);
+      handleSubmitSearch();
+    }
+  };
+
+  const handleTextfieldChange = (e) => {
+    console.log("Typing:", e.target.value);
+    // set app state to e.target.value
+    handleSubmitSearch();
+  };
+
   return (
     <div className="search-input-container">
+      <img src="logo180.png" alt="MeetKai logo" width="40" height="40" />
+
       <TextField
         id="search-text-input"
         label="Ask Kai anything..."
         variant="outlined"
         color="primary"
+        size="small"
+        onKeyDown={handleKeyPress}
+        onChange={handleTextfieldChange}
       />
 
-      <Button
+      <IconButton
         onClick={handleVoiceInputStart}
-        variant="contained"
+        aria-label="voice search"
         color="primary"
       >
         <Mic />
-      </Button>
+      </IconButton>
 
-      <Button
+      <IconButton
         onClick={handleSubmitSearch}
-        variant="contained"
+        aria-label="submit search"
         color="primary"
       >
         <Search />
-      </Button>
+      </IconButton>
     </div>
   );
 }

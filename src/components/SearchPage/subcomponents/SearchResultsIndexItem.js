@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SearchResultsItem(props) {
+export default function SearchResultsIndexItem(props) {
   const { resultItem, handleSelectItemForShowCard } = props;
 
   return (

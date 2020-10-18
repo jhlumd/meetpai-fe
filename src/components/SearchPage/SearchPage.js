@@ -1,7 +1,7 @@
 import React from "react";
 import "./SearchPage.css";
-import SearchInput from "./SearchInput";
-import SearchResultsItem from "./SearchResultsItem";
+import SearchInput from "./subcomponents/SearchInput";
+import SearchResultsIndexItem from "./subcomponents/SearchResultsIndexItem";
 
 export default function SearchPage(props) {
   const { demoData, handleSelectItemForShowCard } = props;
@@ -13,13 +13,15 @@ export default function SearchPage(props) {
       <SearchInput />
 
       <div className="results-index">
-        {demoData.map((item) => (
-          <SearchResultsItem
-            key={item.id}
-            resultItem={item}
-            handleSelectItemForShowCard={handleSelectItemForShowCard}
-          />
-        ))}
+        <div className="results-index-center">
+          {demoData.map((item) => (
+            <SearchResultsIndexItem
+              key={item.id}
+              resultItem={item}
+              handleSelectItemForShowCard={handleSelectItemForShowCard}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

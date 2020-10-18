@@ -5,7 +5,7 @@
   top: 4rem;
   overflow: hidden;
   border-radius: 0.8rem;
-  background-color: #151515;
+  background-color: #282c34;
   transition: top 1s ease-in-out, height 1s ease-in-out;
 }
 
@@ -19,4 +19,9 @@
   padding: 0.8rem;
   display: flex;
   justify-content: space-between;
+}
+
+.item-show-card-container .item-show-card {
+  border: 1px solid yellow;
+  /* width: 100%; */
 }

@@ -2,8 +2,8 @@ import React from "react";
 import { Button } from "@material-ui/core";
 import { Close, Share } from "@material-ui/icons";
 import "./ItemShowCard.css";
-import RestaurantItem from "./RestaurantItem/RestaurantItem";
-import MovieItem from "./MovieItem/MovieItem";
+import RestaurantItem from "./subcomponents/RestaurantItem";
+import MovieItem from "./subcomponents/MovieItem";
 
 export default function ItemShowCard(props) {
   const { showCardHidden, itemForShowCard, handleCloseShowCard } = props;

@@ -5,8 +5,28 @@ export const demoData = [
     name: "Gaetano's Restaurant",
   },
   {
+    id: "r2",
+    type: "restaurant",
+    name: "MhZh",
+  },
+  {
     id: "m1",
     type: "movie",
-    name: "The Good Doctor",
+    name: "Braveheart",
+  },
+  {
+    id: "m2",
+    type: "movie",
+    name: "Vanilla Sky",
+  },
+  {
+    id: "x1",
+    type: "misc",
+    name: "What Is This Card 1?",
+  },
+  {
+    id: "x2",
+    type: "misc",
+    name: "What Is This Card 2?",
   },
 ];

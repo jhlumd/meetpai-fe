@@ -1,8 +1,8 @@
 .app-container {
-  background-color: #282c34;
+  background-color: #151515;
   color: white;
 
-  /* fixme font-size */
+  /* fixme relative font-size */
   font-size: calc(10px + 2vmin); 
 
   min-height: 100vh;
