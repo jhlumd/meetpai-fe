@@ -19,6 +19,7 @@ export default function SearchInput(props) {
         id="search-text-input"
         label="Ask Kai anything..."
         variant="outlined"
+        color="primary"
       />
 
       <Button

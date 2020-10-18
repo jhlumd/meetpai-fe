@@ -1,5 +1,4 @@
 .search-page-container {
-  border: 1px solid red;
   width: 100%;
   min-height: 100vh;
 }
@@ -13,4 +12,9 @@
 
 .search-page-container .results-index {
   border: 1px solid blue;
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
