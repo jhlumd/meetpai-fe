@@ -3,27 +3,51 @@ import { IconButton, TextField } from "@material-ui/core";
 import { Mic, Search } from "@material-ui/icons";
 
 export default function SearchInput(props) {
-  // const { demoData, handleSelectItemForShowCard } = props;
-
-  const handleVoiceInputStart = () => {
-    console.log("Start voice input...");
-  };
+  const { searchInputWord, setSearchInputWord, handleCloseShowCard } = props;
 
   const handleSubmitSearch = () => {
-    console.log("Submit search!!");
+    console.log("Submit search:", searchInputWord);
+    handleCloseShowCard();
+  };
+
+  const handleVoiceInputStart = () => {
+    window.SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const recognition = new window.SpeechRecognition();
+    recognition.interimResults = true;
+    recognition.lang = "en-US";
+
+    console.log("Start voice input...", recognition);
+
+    // fixme: https://medium.com/@amanda.k.hussey/a-basic-tutorial-on-how-to-incorporate-speech-recognition-with-react-6dff9763cea5
+    // const textFieldElement = document.getElementById("search-text-input");
+
+    // recognition.addEventListener("result", (e) => {
+    //   const transcript = Array.from(e.results)
+    //     .map((result) => result[0])
+    //     .map((result) => result.transcript)
+    //     .join("");
+
+    //   console.log("transcript:", transcript);
+    //   textFieldElement.value = transcript;
+    // });
+
+    // recognition.addEventListener("end", recognition.start);
+    // recognition.start();
   };
 
   const handleKeyPress = (e) => {
     if (e.keyCode === 13) {
-      console.log("Entered value:", e.target.value);
-      handleSubmitSearch();
+      console.log("Enter key was pressed with value:", e.target.value);
     }
   };
 
+  /*
+    Search results update as user types
+  */
   const handleTextfieldChange = (e) => {
-    console.log("Typing:", e.target.value);
-    // set app state to e.target.value
-    handleSubmitSearch();
+    setSearchInputWord(e.target.value);
   };
 
   return (

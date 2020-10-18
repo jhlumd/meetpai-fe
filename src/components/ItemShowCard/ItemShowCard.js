@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import { Close, Share } from "@material-ui/icons";
 import "./ItemShowCard.css";
 import RestaurantItem from "./subcomponents/RestaurantItem";
@@ -36,21 +36,21 @@ export default function ItemShowCard(props) {
   return (
     <div className={`item-show-card-container${showCardHidden ? " hide" : ""}`}>
       <div className="header">
-        <Button
+        <IconButton
           onClick={handleCloseShowCard}
-          variant="contained"
+          aria-label="close item card"
           color="primary"
         >
           <Close />
-        </Button>
+        </IconButton>
 
-        <Button
+        <IconButton
           onClick={handleShareItem}
-          variant="contained"
+          aria-label="share item"
           color="primary"
         >
           <Share />
-        </Button>
+        </IconButton>
       </div>
 
       {showCardComponent}

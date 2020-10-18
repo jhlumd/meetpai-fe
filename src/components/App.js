@@ -32,6 +32,7 @@ export default function App(props) {
         <SearchPage
           demoData={demoData}
           handleSelectItemForShowCard={handleSelectItemForShowCard}
+          handleCloseShowCard={handleCloseShowCard}
         />
         <ItemShowCard
           showCardHidden={showCardHidden}

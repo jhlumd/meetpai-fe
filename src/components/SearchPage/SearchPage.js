@@ -1,20 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SearchPage.css";
 import SearchInput from "./subcomponents/SearchInput";
 import SearchResultsIndexItem from "./subcomponents/SearchResultsIndexItem";
 
 export default function SearchPage(props) {
-  const { demoData, handleSelectItemForShowCard } = props;
+  const { demoData, handleSelectItemForShowCard, handleCloseShowCard } = props;
 
-  // state for the search term
+  /*
+    Local state for the search term
+  */
+  const [searchInputWord, setSearchInputWord] = useState("");
+
+  const filteredResults =
+    searchInputWord === ""
+      ? []
+      : demoData.filter(
+          (item) =>
+            item.name.toLowerCase().includes(searchInputWord.toLowerCase()) ||
+            item.type.includes(searchInputWord.toLowerCase())
+        );
 
   return (
     <div className="search-page-container">
-      <SearchInput />
+      <SearchInput
+        searchInputWord={searchInputWord}
+        setSearchInputWord={setSearchInputWord}
+        handleCloseShowCard={handleCloseShowCard}
+      />
 
       <div className="results-index">
         <div className="results-index-center">
-          {demoData.map((item) => (
+          {filteredResults.map((item) => (
             <SearchResultsIndexItem
               key={item.id}
               resultItem={item}
