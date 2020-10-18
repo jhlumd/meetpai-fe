@@ -1,10 +1,10 @@
 .item-show-card-container {
   position: absolute;
   width: 100%;
-  height: calc(100vh - 64px);
-  top: 64px;
+  height: calc(100vh - 4rem);
+  top: 4rem;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 0.8rem;
   background-color: #151515;
   transition: top 1s ease-in-out, height 1s ease-in-out;
 }
@@ -16,7 +16,7 @@
 
 .item-show-card-container .header {
   width: 100%;
-  padding: 10px;
+  padding: 0.8rem;
   display: flex;
   justify-content: space-between;
 }

@@ -4,7 +4,7 @@
 }
 
 .search-input-container {
-  height: 64px;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,8 +13,15 @@
 .search-page-container .results-index {
   border: 1px solid blue;
   width: 100%;
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.search-page-container .results-index .search-result-item-container {
+  border: 1px solid red;
+  width: 90%;
+  height: 12rem;
+  margin-top: 1.5rem;
 }
