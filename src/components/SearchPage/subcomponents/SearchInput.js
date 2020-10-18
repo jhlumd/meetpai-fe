@@ -1,40 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { IconButton, TextField } from "@material-ui/core";
 import { Mic, Search } from "@material-ui/icons";
+
+/*
+  Speech recognition setup
+*/
+const SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+recognition.continous = true;
+recognition.interimResults = true;
+recognition.lang = "en-US";
+console.log("SpeechRec setup completed", SpeechRecognition);
 
 export default function SearchInput(props) {
   const { searchInputWord, setSearchInputWord, handleCloseShowCard } = props;
 
+  /*
+    Handle text input submit/enter key press/submit
+  */
   const handleSubmitSearch = () => {
     console.log("Submit search:", searchInputWord);
     handleCloseShowCard();
-  };
-
-  const handleVoiceInputStart = () => {
-    window.SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
-
-    const recognition = new window.SpeechRecognition();
-    recognition.interimResults = true;
-    recognition.lang = "en-US";
-
-    console.log("Start voice input...", recognition);
-
-    // fixme: https://medium.com/@amanda.k.hussey/a-basic-tutorial-on-how-to-incorporate-speech-recognition-with-react-6dff9763cea5
-    // const textFieldElement = document.getElementById("search-text-input");
-
-    // recognition.addEventListener("result", (e) => {
-    //   const transcript = Array.from(e.results)
-    //     .map((result) => result[0])
-    //     .map((result) => result.transcript)
-    //     .join("");
-
-    //   console.log("transcript:", transcript);
-    //   textFieldElement.value = transcript;
-    // });
-
-    // recognition.addEventListener("end", recognition.start);
-    // recognition.start();
   };
 
   const handleKeyPress = (e) => {
@@ -43,12 +30,78 @@ export default function SearchInput(props) {
     }
   };
 
-  /*
-    Search results update as user types
-  */
   const handleTextfieldChange = (e) => {
     setSearchInputWord(e.target.value);
   };
+
+  /*
+    Handle speech recognition
+  */
+  const [listening, setListening] = useState(false);
+
+  const toggleListen = () => {
+    console.log("Listening set to:", !listening);
+    setListening(!listening);
+  };
+
+  useEffect(() => {
+    /*
+      Handle when to start and stop SpeechRecognition
+    */
+    if (listening) {
+      console.log("Starting SpeechRecognition!");
+      recognition.start();
+      recognition.onend = () => {
+        if (listening) {
+          console.log("...continue listening...");
+          recognition.start();
+        }
+      };
+    } else {
+      console.log("Turning listening off!");
+      recognition.stop();
+      recognition.onend = () => {
+        if (!listening) {
+          console.log("Stopped listening per user click");
+        }
+      };
+    }
+
+    /*
+      Transcript generation
+    */
+    //  fixme: onresult not firing...
+    let finalTranscript = "";
+    recognition.onresult = (e) => {
+      let interimTranscript = "";
+
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        const transcript = e.results[i][0].transcript;
+        console.log("transcript:", transcript);
+        if (e.results[i].isFinal) finalTranscript += transcript + " ";
+        else interimTranscript += transcript;
+      }
+
+      console.log("Final Transcript:", finalTranscript);
+      console.log("Interim Transcript:", interimTranscript);
+
+      // document.getElementById(
+      //   "search-text-input"
+      // ).innerHTML = interimTranscript;
+      document.getElementById("search-text-input").innerHTML = finalTranscript;
+    };
+
+    /*
+      Print error, if any
+    */
+    recognition.onerror = (e) => {
+      console.log("Error occurred in SpeechRecognition: " + e.error);
+    };
+    // fixme: cleanup effect needed?
+    // return () => {
+    //   console.log("Turning listening off!");
+    // };
+  }, [listening]);
 
   return (
     <div className="search-input-container">
@@ -65,7 +118,7 @@ export default function SearchInput(props) {
       />
 
       <IconButton
-        onClick={handleVoiceInputStart}
+        onClick={toggleListen}
         aria-label="voice search"
         color="primary"
       >
