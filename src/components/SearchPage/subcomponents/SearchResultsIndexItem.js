@@ -1,6 +1,7 @@
 import React from "react";
 import { Restaurant, Movie, ContactSupport } from "@material-ui/icons";
 import Rating from "@material-ui/lab/Rating";
+import { logoUrls } from "../../../demo/demoData";
 
 export default function SearchResultsIndexItem(props) {
   const { resultItem, handleSelectItemForShowCard } = props;
@@ -12,15 +13,15 @@ export default function SearchResultsIndexItem(props) {
   let domainIcon;
   switch (domain) {
     case "restaurant":
-      domainIcon = <Restaurant />;
+      domainIcon = <Restaurant fontSize="small" />;
       break;
 
     case "movie":
-      domainIcon = <Movie />;
+      domainIcon = <Movie fontSize="small" />;
       break;
 
     default:
-      domainIcon = <ContactSupport />;
+      domainIcon = <ContactSupport fontSize="small" />;
       break;
   }
 
@@ -30,7 +31,7 @@ export default function SearchResultsIndexItem(props) {
       onClick={() => handleSelectItemForShowCard(resultItem)}
     >
       <figure>
-        <img src={imgUrl} alt={`${name} main`} />
+        <img src={imgUrl} alt={`${name} small`} />
       </figure>
 
       <div className="info-container">
@@ -40,8 +41,23 @@ export default function SearchResultsIndexItem(props) {
         </div>
 
         <div className="rating-available">
-          <Rating name="read-only" value={rating} precision={0.1} readOnly />
-          <p>A: {availableOn}</p>
+          <Rating
+            name="read-only"
+            value={rating}
+            precision={0.1}
+            size="small"
+            readOnly
+          />
+          <div className="available-on-container">
+            <p className="available-on-label">
+              Available on:
+            </p>
+            <div className="available-on-list">
+              {availableOn.map((company, i) => (
+                <img key={i} src={logoUrls[company]} alt={`${company} logo`} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

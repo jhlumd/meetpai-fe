@@ -138,3 +138,18 @@ export const demoData = [
     availableOn: [],
   },
 ];
+
+export const logoUrls = {
+  Caviar:
+    "https://cdn.otstatic.com/mobileweb/mobile-web-frontend/images/ic_caviar_v2.svg",
+  Postmates:
+    "https://cdn.otstatic.com/mobileweb/mobile-web-frontend/images/ic_postmates_v2.svg",
+  UberEats:
+    "https://cdn.otstatic.com/mobileweb/mobile-web-frontend/images/ic_uber_eats_v2.svg",
+  Youtube:
+    "https://static.wikia.nocookie.net/logopedia/images/8/82/YT_Icon_2017.svg",
+  Tubi: "https://cdn.adrise.tv/image/app_icon_200x200.png",
+  DisneyPlus:
+    "https://is5-ssl.mzstatic.com/image/thumb/Purple114/v4/9a/b9/21/9ab92179-d532-d570-83ad-92082ab6fac5/AppIcon-1x_U007emarketing-0-7-0-0-0-85-220.png/230x0w.webp",
+  Netflix: "https://cdn.jim-nielsen.com/ios/512/netflix-2018-11-01.png",
+};
