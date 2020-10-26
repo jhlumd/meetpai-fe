@@ -51,12 +51,12 @@ export default function SearchInput(props) {
     if (listening) {
       console.log("Starting SpeechRecognition!");
       recognition.start();
-      recognition.onend = () => {
-        if (listening) {
-          console.log("...continue listening...");
-          recognition.start();
-        }
-      };
+      // recognition.onend = () => {
+      //   if (listening) {
+      //     console.log("...continue listening...");
+      //     recognition.start();
+      //   }
+      // };
     } else {
       console.log("Turning listening off!");
       recognition.stop();
@@ -70,7 +70,6 @@ export default function SearchInput(props) {
     /*
       Transcript generation
     */
-    //  fixme: onresult not firing...
     let finalTranscript = "";
     console.log("recognition obj:", recognition);
     recognition.onresult = (e) => {
@@ -80,17 +79,16 @@ export default function SearchInput(props) {
       for (let i = e.resultIndex; i < e.results.length; i++) {
         const transcript = e.results[i][0].transcript;
         console.log("transcript:", transcript);
-        if (e.results[i].isFinal) finalTranscript += transcript + " ";
+        if (e.results[i].isFinal) finalTranscript += transcript;
         else interimTranscript += transcript;
       }
 
       console.log("Final Transcript:", finalTranscript);
       console.log("Interim Transcript:", interimTranscript);
 
-      // document.getElementById(
-      //   "search-text-input"
-      // ).innerHTML = interimTranscript;
-      document.getElementById("search-text-input").innerHTML = finalTranscript;
+      // document.getElementById("search-text-input").innerHTML = interimTranscript;
+      document.getElementById("search-text-input").value = finalTranscript;
+      setSearchInputWord(finalTranscript);
     };
 
     /*
