@@ -23,6 +23,139 @@
 }
 
 .item-show-card-container .item-show-card {
-  border: 1px solid yellow;
-  /* width: 100%; */
+  height: calc(100vh - 7rem);
+  padding: 0 1.25rem 0.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* For Movie Card */
+.item-show-card .poster-info {
+  display: flex;
+}
+
+.item-show-card .poster-info .movie-image {
+  height: 10rem;
+  border-radius: 0.4rem;
+}
+
+.item-show-card .poster-info .movie-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.movie-info h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.movie-info .release-date {
+  font-size: 1rem;
+  font-weight: normal;
+  color: grey;
+}
+
+.movie-info .genre-duration span {
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  margin: 0 0.25rem 0 0.25rem;
+  border-radius: 0.5rem;
+  background-color: #ddbea9;
+}
+
+.item-show-card .movie-ratings {
+  padding: 1rem 0 1rem 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.movie-ratings div {
+  flex: 1;
+  padding: 0 0.25rem 0 0.25rem;
+  font-weight: bold;
+}
+
+.rating-site {
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+
+.rating-mid {
+  border-right: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+}
+
+.item-show-card .synopsis {
+  text-align: start;
+  padding: 1rem 0 1rem 0;
+}
+
+.item-show-card .cast-list {
+  display: flex;
+}
+
+.cast-list .cast-card {
+  flex: 1;
+  border-radius: 0.5rem;
+  margin: 0 0.1rem 0 0.1rem;
+  padding: 0.5rem;
+  background-color: #ddbea9;
+}
+
+.cast-list .cast-card img {
+  width: 5rem;
+}
+
+.cast-list .cast-card p {
+  font-size: 0.6rem;
+}
+
+.item-show-card .movie-available-on {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.movie-available-on .movie-available-on-inner {
+  display: flex;
+  justify-content: center;
+  border-radius: 1rem;
+  background-color: #ddbea9;
+  padding: 0.75rem 5rem 0.75rem 5rem;
+}
+
+.movie-available-on-inner p {
+  line-height: 3rem;
+  padding-right: 0.5rem;
+}
+
+.movie-available-on-inner img {
+  height: 3rem;
+}
+
+/* For Restaurant Card */
+.item-show-card .restaurant-name {
+  border: 1px solid red;
+}
+
+.item-show-card .restaurant-image {
+  width: 12rem;
+}
+
+.item-show-card .rating-price-range {
+  border: 1px solid red;
+}
+
+.item-show-card .cuisine-location {
+  border: 1px solid red;
+}
+
+.item-show-card .booked-available-on {
+  border: 1px solid red;
+}
+
+.item-show-card .address-phone {
+  border: 1px solid red;
 }
