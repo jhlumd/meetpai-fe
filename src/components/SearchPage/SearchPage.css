@@ -91,4 +91,5 @@
 
 .rating-available .available-on-container .available-on-list img {
   height: 1rem;
+  border-radius: 0.2rem;
 }

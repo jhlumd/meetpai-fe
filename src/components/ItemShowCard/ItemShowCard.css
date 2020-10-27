@@ -91,7 +91,12 @@
   padding: 1rem 0 1rem 0;
 }
 
-.item-show-card .cast-list {
+.cast-list-container .cast-section-title {
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.cast-list-container .cast-list {
   display: flex;
 }
 
@@ -133,6 +138,7 @@
 
 .movie-available-on-inner img {
   height: 3rem;
+  border-radius: 0.5rem;
 }
 
 /* For Restaurant Card */

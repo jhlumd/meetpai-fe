@@ -30,7 +30,7 @@ export default function MovieItem(props) {
             <span>{genre}</span>
             <span>{duration}</span>
           </p>
-          <p className="director">Directed by: {director}</p>
+          <p className="director">Directed by {director}</p>
         </div>
       </div>
 
@@ -51,13 +51,16 @@ export default function MovieItem(props) {
 
       <div className="synopsis">{synopsis}</div>
 
-      <div className="cast-list">
-        {cast.map((actor, i) => (
-          <div key={i} className="cast-card">
-            <img src="https://i.stack.imgur.com/YaL3s.jpg" alt="default cast profile" />
-            <p>{actor}</p>
-          </div>
-        ))}
+      <div className="cast-list-container">
+        <p className="cast-section-title">Cast Members:</p>  
+        <div className="cast-list">
+          {cast.map((actor, i) => (
+            <div key={i} className="cast-card">
+              <img src="https://i.stack.imgur.com/YaL3s.jpg" alt="default cast profile" />
+              <p>{actor}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="movie-available-on">
