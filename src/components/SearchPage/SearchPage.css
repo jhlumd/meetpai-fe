@@ -9,9 +9,9 @@
   justify-content: center;
   align-items: center;
 
-  /* fixme: search bar bg color.. */
+  background-color: #ddbea9;
   /* background-color: #61dafb; */
-  background-color: #9eb7e9;
+  /* background-color: #9eb7e9; */
   border-radius: 0.75rem;
 }
 
@@ -38,7 +38,8 @@
   height: 5rem;
   margin-top: 1rem;
   border-radius: 0.5rem;
-  background-color: #282c34;
+  background-color: #eddcd2;
+  /* background-color: #282c34; */
 
   display: flex;
   align-items: center;

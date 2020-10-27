@@ -88,7 +88,10 @@ export default function SearchInput(props) {
 
       // document.getElementById("search-text-input").innerHTML = interimTranscript;
       document.getElementById("search-text-input").value = finalTranscript;
+
+      // Submit search and close showcard if open
       setSearchInputWord(finalTranscript);
+      handleCloseShowCard();
     };
 
     /*
@@ -101,6 +104,8 @@ export default function SearchInput(props) {
     // return () => {
     //   console.log("Turning listening off!");
     // };
+
+    // fixme: React Hook useEffect has a missing dependency: 'setSearchInputWord'. Either include it or remove the dependency array
   }, [listening]);
 
   return (

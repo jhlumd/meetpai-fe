@@ -6,7 +6,8 @@
   top: 4rem;
   overflow: hidden;
   border-radius: 0.8rem;
-  background-color: #282c34;
+  background-color: #eddcd2;
+  /* background-color: #282c34; */
   transition: top 0.5s ease-in-out, height 0.5s ease-in-out;
 }
 
