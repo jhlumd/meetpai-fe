@@ -25,7 +25,7 @@ export default function TmdbShow(props) {
 
         <div className="mobile_header">
           <div className="content">
-            <h2 className="10">
+            <h2>
               {name} <span className="release_date">({releaseDateShort})</span>
             </h2>
           </div>
