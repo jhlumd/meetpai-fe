@@ -60,6 +60,55 @@ export const demoData = [
     availableOn: ["Caviar", "UberEats"],
   },
   {
+    id: "m0",
+    domain: "braveheart",
+    name: "Braveheart",
+    imgUrl:
+      "http://image.tmdb.org/t/p/w116_and_h174_face/or1gBugydmjToAEq7OZY0owwFk.jpg",
+    posterImgUrl:
+      "http://image.tmdb.org/t/p/w116_and_h174_face/or1gBugydmjToAEq7OZY0owwFk.jpg",
+    bgImgUrl:
+      "http://image.tmdb.org/t/p/w1000_and_h450_multi_faces/xRooZvuQPIc1zdIZqJM1oYT67HD.jpg",
+    genre: "Action, Drama, History, War",
+    releaseDate: "05/24/1995 (US)",
+    releaseDateShort: 1995,
+    duration: "2h 58m",
+    rating: 4.15,
+    userScore: 79,
+    tagline: "Every man dies. Not every man truly lives",
+    synopsis: `Enraged at the slaughter of Murron, his new bride and childhood love, Scottish warrior William Wallace slays a platoon of the local English lord's soldiers. This leads the village to revolt and, eventually, the entire country to rise up against English rule.`,
+    author: "Randall Wallace",
+    director: "Mel Gibson",
+    cast: [
+      [
+        "Mel Gibson",
+        "William Wallace",
+        "https://www.themoviedb.org/person/2461-mel-gibson?language=en-US",
+      ],
+      [
+        "Catherine McCormack",
+        "Murron MacClannough",
+        "https://www.themoviedb.org/person/2462-catherine-mccormack?language=en-US",
+      ],
+      [
+        "Sophie Marceau",
+        "Princess Isabelle",
+        "https://www.themoviedb.org/person/1957-sophie-marceau?language=en-US",
+      ],
+      [
+        "Patrick McGoohan",
+        "King Edward",
+        "https://www.themoviedb.org/person/2463-patrick-mcgoohan?language=en-US",
+      ],
+      [
+        "Angus Macfadyen",
+        "Robert the Bruce",
+        "https://www.themoviedb.org/person/2464-angus-macfadyen?language=en-US",
+      ],
+    ],
+    availableOn: ["Youtube"],
+  },
+  {
     id: "m1",
     domain: "movie",
     name: "Braveheart",

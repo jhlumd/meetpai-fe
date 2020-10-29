@@ -4,6 +4,7 @@ import { Close, Share } from "@material-ui/icons";
 import "./ItemShowCard.css";
 import RestaurantItem from "./subcomponents/RestaurantItem";
 import MovieItem from "./subcomponents/MovieItem";
+import TmdbShow from "./subcomponents/TmdbShow";
 
 export default function ItemShowCard(props) {
   const { showCardHidden, itemForShowCard, handleCloseShowCard } = props;
@@ -12,19 +13,23 @@ export default function ItemShowCard(props) {
     console.log("Share item:", itemForShowCard.name);
   };
 
-  let showCardComponent;
+  let whichShowCard;
   switch (itemForShowCard.domain) {
     case "restaurant":
-      showCardComponent = <RestaurantItem itemForShowCard={itemForShowCard} />;
+      whichShowCard = <RestaurantItem itemForShowCard={itemForShowCard} />;
       break;
   
     case "movie":
-      showCardComponent = <MovieItem itemForShowCard={itemForShowCard} />;
+      whichShowCard = <MovieItem itemForShowCard={itemForShowCard} />;
+      break;
+  
+    case "braveheart":
+      whichShowCard = <TmdbShow itemForShowCard={itemForShowCard} />;
       break;
   
     default:
       // fixme: basic default
-      showCardComponent = (
+      whichShowCard = (
         <p>
           Item Show Card:{" "}
           {itemForShowCard.name ? itemForShowCard.name : "No Item Selected"}
@@ -53,7 +58,7 @@ export default function ItemShowCard(props) {
         </IconButton>
       </div>
 
-      {showCardComponent}
+      {whichShowCard}
     </div>
   );
 }
